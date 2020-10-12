@@ -1,0 +1,4 @@
+<select id="category" [(ngModel)]="selectedValue" (change)="onChange($event.target)">
+  <option value="0" [selected]="true">Фильтрация по категории</option>
+  <option *ngFor="let option of categoryList" [ngValue]="option.id">{{option.name}}</option>
+</select>

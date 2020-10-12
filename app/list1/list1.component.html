@@ -1,0 +1,19 @@
+<h2>My List 1</h2>
+
+<div class="my_list">
+  <div>категория{{selectedValue}}</div>
+
+  <table>
+    <tr *ngFor="let value of list" [style.background-color]="value.price > 600 ? 'yellow' : 'gray'">
+      <span *ngIf="value.category == selectedValue || selectedValue == '0'">
+        <td>
+          {{value | json}}
+        </td>
+        <td><button (click)="deleteElement(value.id)">Удалить</button></td>
+        <td><button (click)="showElement(value)">Посмотреть подробности</button></td>
+      </span>
+    </tr>
+  </table>
+
+
+</div>
